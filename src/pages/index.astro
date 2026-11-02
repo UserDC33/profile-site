@@ -354,25 +354,181 @@
           </div>
         </section>
 
-    <section class="card" aria-labelledby="photography-heading">
-      <h2 id="photography-heading">Photography</h2>
-      <p style="color: var(--muted); margin-bottom: 1rem; font-size: 0.9375rem;">Some shots I've taken — mostly street, architecture, and daily moments.</p>
-      <div class="gallery" role="list">
-              <!-- Replace these with your actual photos in public/photos/ -->
-              <a href="/profile-site/photos/IMG_7688.jpg" target="_blank" rel="noopener" role="listitem">
-                <img src="/profile-site/photos/IMG_7688.jpg" alt="Photo 1" loading="lazy" />
+    <section class="card" aria-labelledby="creations-heading">
+          <h2 id="creations-heading">Creations</h2>
+          <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 0.9375rem;">Projects, experiments, and things I've built.</p>
+          <div class="creations-collage" role="list">
+            <article class="creation-item large" role="listitem">
+              <a href="/profile-site/photos/IMG_7688.jpg" target="_blank" rel="noopener" class="creation-link">
+                <img src="/profile-site/photos/IMG_7688.jpg" alt="Creation 1" loading="lazy" />
+                <div class="creation-overlay">
+                  <div class="creation-info">
+                    <h3>OSIS Website</h3>
+                    <p>Astro + Supabase + Tailwind</p>
+                  </div>
+                  <svg class="zoom-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+                </div>
               </a>
-              <a href="/profile-site/photos/IMG_7716.jpg" target="_blank" rel="noopener" role="listitem">
-                <img src="/profile-site/photos/IMG_7716.jpg" alt="Photo 2" loading="lazy" />
+            </article>
+            <article class="creation-item" role="listitem">
+              <a href="/profile-site/photos/IMG_7716.jpg" target="_blank" rel="noopener" class="creation-link">
+                <img src="/profile-site/photos/IMG_7716.jpg" alt="Creation 2" loading="lazy" />
+                <div class="creation-overlay">
+                  <div class="creation-info">
+                    <h3>Profile Site</h3>
+                    <p>Astro + GitHub Pages</p>
+                  </div>
+                  <svg class="zoom-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+                </div>
               </a>
-              <a href="/profile-site/photos/IMG_7737.jpg" target="_blank" rel="noopener" role="listitem">
-                <img src="/profile-site/photos/IMG_7737.jpg" alt="Photo 3" loading="lazy" />
+            </article>
+            <article class="creation-item" role="listitem">
+              <a href="/profile-site/photos/IMG_7737.jpg" target="_blank" rel="noopener" class="creation-link">
+                <img src="/profile-site/photos/IMG_7737.jpg" alt="Creation 3" loading="lazy" />
+                <div class="creation-overlay">
+                  <div class="creation-info">
+                    <h3>Experiments</h3>
+                    <p>TypeScript + Modern CSS</p>
+                  </div>
+                  <svg class="zoom-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+                </div>
               </a>
-            </div>
-      <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--muted);">
-        Click any image to view full size. Add more photos to <code>public/photos/</code> and update this section.
-      </p>
-    </section>
+            </article>
+            <article class="creation-item placeholder" role="listitem">
+              <a href="#" class="creation-link placeholder-link" aria-label="Add new creation">
+                <div class="placeholder-content">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M12 8v8M8 12h8"></path></svg>
+                  <span>Add Creation</span>
+                </div>
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <style>
+          .creations-collage {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-auto-rows: 220px;
+            gap: 1rem;
+            grid-auto-flow: dense;
+          }
+          .creation-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--card);
+            border: 1px solid var(--border);
+          }
+          .creation-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+          }
+          .creation-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+          }
+          .creation-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          }
+          .creation-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.25rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+          }
+          .creation-item:hover .creation-overlay {
+            opacity: 1;
+          }
+          .creation-item:hover img {
+            transform: scale(1.05);
+          }
+          .creation-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.25rem;
+            transform: translateY(10px);
+            transition: transform 0.3s ease;
+          }
+          .creation-info p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            transform: translateY(10px);
+            transition: transform 0.3s ease 0.05s;
+          }
+          .creation-item:hover .creation-info h3,
+          .creation-item:hover .creation-info p {
+            transform: translateY(0);
+          }
+          .zoom-icon {
+            align-self: flex-end;
+            color: white;
+            opacity: 0.8;
+            transform: scale(0.8);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+          }
+          .creation-item:hover .zoom-icon {
+            transform: scale(1);
+            opacity: 1;
+          }
+          .creation-item.placeholder {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 2px dashed var(--accent);
+          }
+          .placeholder-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--accent);
+            text-decoration: none;
+          }
+          .placeholder-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+          }
+          .placeholder-link:hover .placeholder-content {
+            opacity: 1;
+          }
+          .placeholder-content svg {
+            animation: float 3s ease-in-out infinite;
+          }
+          @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .placeholder-content svg { animation: none; }
+            .creation-link img { transition: none; }
+            .creation-overlay { transition: none; }
+            .creation-info h3, .creation-info p { transform: none; }
+          }
+          @media (max-width: 640px) {
+            .creation-item.large {
+              grid-column: span 1;
+              grid-row: span 1;
+            }
+            .creations-collage {
+              grid-auto-rows: 200px;
+            }
+          }
+        </style>
 
     <section class="card" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
