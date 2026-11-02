@@ -69,10 +69,15 @@
     .link:hover { border-color: var(--accent); background: var(--accent); color: white; }
     .link:hover svg { stroke: white; }
     .link svg { width: 18px; height: 18px; stroke: currentColor; flex-shrink: 0; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s; }
+    .gallery img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .gallery a { text-decoration: none; color: inherit; }
     footer { text-align: center; color: var(--muted); font-size: 0.875rem; padding: var(--space); margin-top: auto; }
     @media (max-width: 480px) {
       .container { padding: calc(var(--space) * 2) 1rem; }
       .card { padding: var(--space); }
+      .gallery { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -106,6 +111,35 @@
         <li style="background: var(--bg); border: 1px solid var(--border); padding: 0.375rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Git / GitHub</li>
         <li style="background: var(--bg); border: 1px solid var(--border); padding: 0.375rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Tailwind CSS</li>
       </ul>
+    </section>
+
+    <section class="card" aria-labelledby="photography-heading">
+      <h2 id="photography-heading">Photography</h2>
+      <p style="color: var(--muted); margin-bottom: 1rem; font-size: 0.9375rem;">Some shots I've taken — mostly street, architecture, and daily moments.</p>
+      <div class="gallery" role="list">
+        <!-- Replace these with your actual photos in public/photos/ -->
+        <a href="/photos/photo1.jpg" target="_blank" rel="noopener" role="listitem">
+          <img src="/photos/photo1.jpg" alt="Photo 1" loading="lazy" />
+        </a>
+        <a href="/photos/photo2.jpg" target="_blank" rel="noopener" role="listitem">
+          <img src="/photos/photo2.jpg" alt="Photo 2" loading="lazy" />
+        </a>
+        <a href="/photos/photo3.jpg" target="_blank" rel="noopener" role="listitem">
+          <img src="/photos/photo3.jpg" alt="Photo 3" loading="lazy" />
+        </a>
+        <a href="/photos/photo4.jpg" target="_blank" rel="noopener" role="listitem">
+          <img src="/photos/photo4.jpg" alt="Photo 4" loading="lazy" />
+        </a>
+        <a href="/photos/photo5.jpg" target="_blank" rel="noopener" role="listitem">
+          <img src="/photos/photo5.jpg" alt="Photo 5" loading="lazy" />
+        </a>
+        <a href="/photos/photo6.jpg" target="_blank" rel="noopener" role="listitem">
+          <img src="/photos/photo6.jpg" alt="Photo 6" loading="lazy" />
+        </a>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--muted);">
+        Click any image to view full size. Add more photos to <code>public/photos/</code> and update this section.
+      </p>
     </section>
 
     <section class="card" aria-labelledby="contact-heading">
