@@ -199,35 +199,35 @@
         </a>
       </div>
     </section>
-  </div>
-  <footer>
-      Built with Astro · Deployed on GitHub Pages · <a href="https://github.com/yourusername/profile-site" style="color: inherit;" target="_blank" rel="noopener">Source</a>
-    </footer>
-    <script dangerouslySetInnerHTML={{__html: `
-      (function() {
-        var cards = document.querySelectorAll('.card');
-        var header = document.querySelector('header');
-        function onScroll() {
-          cards.forEach(function(card, i) {
-            var top = card.getBoundingClientRect().top;
-            if (top < window.innerHeight && top > -card.offsetHeight) {
-              requestAnimationFrame(function(){
-                card.classList.add('visible');
-                setTimeout(function(){ card.style.visibility=''; }, 650);
-              });
-            }
-          });
-          if (header) {
-            var hTop = header.getBoundingClientRect().top;
-            if (hTop < window.innerHeight && hTop > -header.offsetHeight) {
-              header.classList.add('visible');
+      </div>
+      <footer>
+          Built with Astro · Deployed on GitHub Pages · <a href="https://github.com/yourusername/profile-site" style="color: inherit;" target="_blank" rel="noopener">Source</a>
+        </footer>
+      <script>
+        (function() {
+          var cards = document.querySelectorAll('.card');
+          var header = document.querySelector('header');
+          function onScroll() {
+            cards.forEach(function(card, i) {
+              var top = card.getBoundingClientRect().top;
+              if (top < window.innerHeight && top > -card.offsetHeight) {
+                requestAnimationFrame(function(){
+                  card.classList.add('visible');
+                  setTimeout(function(){ card.style.visibility=''; }, 650);
+                });
+              }
+            });
+            if (header) {
+              var hTop = header.getBoundingClientRect().top;
+              if (hTop < window.innerHeight && hTop > -header.offsetHeight) {
+                header.classList.add('visible');
+              }
             }
           }
-        }
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll, { passive: true });
-        onScroll();
-      })();
-    `}} />
-  </body>
+          window.addEventListener('scroll', onScroll, { passive: true });
+          window.addEventListener('resize', onScroll, { passive: true });
+          onScroll();
+        })();
+      </script>
+    </body>
 </html>
