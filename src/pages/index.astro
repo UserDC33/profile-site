@@ -700,22 +700,174 @@
         </style>
 
     <section class="card" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
-      <div class="links">
-        <a href="https://github.com/yourusername" class="link" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM7.5 19.5a9 9 0 005.377 1.655c.62.07 1.242-.116 1.564-.611a.75.75 0 111.088 1.076A10.5 10.5 0 017.5 19.5zm10.5-1.5a9 9 0 00-5.377-1.655c-.62-.07-1.242.116-1.565.61a.75.75 0 00-1.087 1.077A10.5 10.5 0 0018 18z" /></svg>
-          GitHub
-        </a>
-        <a href="https://linkedin.com/in/yourusername" class="link" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 4.5a1.5 1.5 0 00-3 0V18a1.5 1.5 0 003 0V4.5zM3 18a1.5 1.5 0 013 0v-2.995a4.525 4.525 0 011.556-3.512A9.03 9.03 0 017.5 6.375a5.25 5.25 0 0110.5 0c1.28 0 2.49.346 3.445 1.047a4.524 4.524 0 011.556 3.512V18a1.5 1.5 0 01-3 0V8.721c0-1.154-.567-2.179-1.456-2.752A4.5 4.5 0 0015.75 5a4.5 4.5 0 00-4.5 4.5v9.279z" /></svg>
-          LinkedIn
-        </a>
-        <a href="mailto:you@example.com" class="link">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-          Email
-        </a>
-      </div>
-    </section>
+          <h2 id="contact-heading">Contact</h2>
+          <p class="contact-subtitle">Open to collaborations, freelance, or just saying hi.</p>
+          <div class="contact-grid" role="list">
+            <a href="https://github.com/yourusername" class="contact-item" data-contact="github" target="_blank" rel="noopener" role="listitem" aria-label="GitHub">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </div>
+              <div class="contact-info">
+                <h3>GitHub</h3>
+                <p>Code, repos, and contributions</p>
+              </div>
+              <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="https://linkedin.com/in/yourusername" class="contact-item" data-contact="linkedin" target="_blank" rel="noopener" role="listitem" aria-label="LinkedIn">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </div>
+              <div class="contact-info">
+                <h3>LinkedIn</h3>
+                <p>Professional network & updates</p>
+              </div>
+              <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="mailto:you@example.com" class="contact-item" data-contact="email" role="listitem" aria-label="Email">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-info">
+                <h3>Email</h3>
+                <p>Direct message to my inbox</p>
+              </div>
+              <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </section>
+
+        <style>
+          .contact-subtitle {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin: -0.5rem 0 1.5rem;
+            text-align: center;
+          }
+          .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+          }
+          .contact-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s, border-color 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: contact-reveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          }
+          .contact-item:nth-child(1) { animation-delay: 0.1s; }
+          .contact-item:nth-child(2) { animation-delay: 0.2s; }
+          .contact-item:nth-child(3) { animation-delay: 0.3s; }
+          @keyframes contact-reveal {
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .contact-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, transparent, transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s, background 0.3s;
+          }
+          .contact-item:hover::before { opacity: 1; }
+          [data-contact="github"]::before { background: linear-gradient(135deg, #24292e, #586069); }
+          [data-contact="linkedin"]::before { background: linear-gradient(135deg, #0077b5, #00a0dc); }
+          [data-contact="email"]::before { background: linear-gradient(135deg, #ea4335, #fbbc05); }
+          .contact-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+            border-color: transparent;
+          }
+          .contact-icon {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(var(--icon-rgb), 0.12), rgba(var(--icon-rgb-2), 0.12));
+            color: var(--icon-color);
+            flex-shrink: 0;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+          }
+          [data-contact="github"] .contact-icon { --icon-rgb: 36, 41, 46; --icon-rgb-2: 88, 96, 105; --icon-color: #24292e; }
+          [data-contact="linkedin"] .contact-icon { --icon-rgb: 0, 119, 181; --icon-rgb-2: 0, 160, 220; --icon-color: #0077b5; }
+          [data-contact="email"] .contact-icon { --icon-rgb: 234, 67, 53; --icon-rgb-2: 251, 188, 5; --icon-color: #ea4335; }
+          .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+            box-shadow: 0 8px 24px rgba(var(--icon-rgb), 0.25);
+            background: linear-gradient(135deg, rgba(var(--icon-rgb), 0.2), rgba(var(--icon-rgb-2), 0.2));
+          }
+          .contact-info {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            min-width: 0;
+          }
+          .contact-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--fg);
+            margin-bottom: 0.125rem;
+            transition: color 0.3s;
+          }
+          .contact-item:hover .contact-info h3 {
+            background: linear-gradient(135deg, var(--icon-color), var(--icon-color-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          [data-contact="github"] .contact-info h3 { --icon-color: #24292e; --icon-color-2: #586069; }
+          [data-contact="linkedin"] .contact-info h3 { --icon-color: #0077b5; --icon-color-2: #00a0dc; }
+          [data-contact="email"] .contact-info h3 { --icon-color: #ea4335; --icon-color-2: #fbbc05; }
+          .contact-info p {
+            font-size: 0.8rem;
+            color: var(--muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .contact-arrow {
+            position: relative;
+            z-index: 1;
+            color: var(--muted);
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: opacity 0.3s, transform 0.3s, color 0.3s;
+          }
+          .contact-item:hover .contact-arrow {
+            opacity: 1;
+            transform: translateX(0);
+            color: var(--icon-color);
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .contact-item { animation: none; opacity: 1; transform: none; }
+            .contact-item:hover { transform: translateY(-2px); }
+            .contact-icon { transition: none; }
+            .contact-item:hover .contact-icon { transform: scale(1.05); }
+            .contact-arrow { transition: none; opacity: 1; transform: none; }
+          }
+          @media (max-width: 480px) {
+            .contact-grid { grid-template-columns: 1fr; }
+          }
+        </style>
       </div>
       <footer>
           Built with Astro · Deployed on GitHub Pages · <a href="https://github.com/yourusername/profile-site" style="color: inherit;" target="_blank" rel="noopener">Source</a>
