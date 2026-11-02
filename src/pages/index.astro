@@ -58,7 +58,9 @@
       padding: calc(var(--space) * 3) var(--space);
     }
     header { margin-bottom: calc(var(--space) * 2); text-align: center; }
-    h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+        .header-content { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
     .tagline { color: var(--muted); font-size: 1.125rem; }
     .card {
       background: var(--card);
@@ -133,9 +135,14 @@
 <body>
   <div class="container">
     <header>
-          <h1>Bara Arkantara</h1>
-          <p class="tagline">Student • Developer • Curious Builder</p>
-        </header>
+            <div class="header-content">
+              <img src="/profile-site/photos/avatar.jpg" alt="Bara Arkantara" class="avatar" />
+              <div>
+                <h1>Bara Arkantara</h1>
+                <p class="tagline">Student • Developer • Curious Builder</p>
+              </div>
+            </div>
+          </header>
 
         <section class="card" aria-labelledby="about-heading">
           <h2 id="about-heading">About</h2>
