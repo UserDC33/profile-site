@@ -199,11 +199,107 @@
                   .explore-tag svg { flex-shrink: 0; }
                 </style>
 
-    <section class="card" aria-labelledby="education-heading">
-      <h2 id="education-heading">Education</h2>
-      <p><strong>SMA Angkasa 1 Jakarta</strong> — High School Student (2024–Present)</p>
-      <p>Active in OSIS: organizing events, managing student aspirations, and contributing to school community.</p>
-    </section>
+    <section class="card timeline-card" aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
+          <div class="timeline" role="list">
+            <article class="timeline-item" role="listitem">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2024">2024 – 2026</time>
+                <h3 class="timeline-title">Nassa School</h3>
+                <p class="timeline-subtitle">Junior High School</p>
+              </div>
+            </article>
+            <article class="timeline-item current" role="listitem" aria-current="true">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <time class="timeline-date" datetime="2026">2026 – Present</time>
+                <h3 class="timeline-title">SMA Angkasa 1 Jakarta</h3>
+                <p class="timeline-subtitle">High School Student</p>
+                <p class="timeline-desc">Active in OSIS: organizing events, managing student aspirations, and contributing to school community.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <style>
+          .timeline-card { padding-bottom: calc(var(--space) * 1.5); }
+          .timeline {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 1rem 0.5rem 1.5rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) transparent;
+          }
+          .timeline::-webkit-scrollbar { height: 6px; }
+          .timeline::-webkit-scrollbar-track { background: transparent; }
+          .timeline::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+          .timeline-item {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            position: relative;
+          }
+          .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: linear-gradient(90deg, var(--border), transparent);
+          }
+          .timeline-dot {
+            position: absolute;
+            left: -4px;
+            top: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--card);
+            box-shadow: 0 0 0 2px var(--accent);
+            z-index: 1;
+          }
+          .timeline-item.current .timeline-dot {
+            animation: pulse 2s ease-in-out infinite;
+          }
+          @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 2px var(--accent); }
+            50% { box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.3); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .timeline-item.current .timeline-dot { animation: none; }
+          }
+          .timeline-content { padding-left: 1.5rem; }
+          .timeline-date {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+          }
+          .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--fg);
+            margin-bottom: 0.25rem;
+          }
+          .timeline-subtitle {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+          }
+          .timeline-desc {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.6;
+          }
+        </style>
 
     <section class="card" aria-labelledby="skills-heading">
           <h2 id="skills-heading">Skills</h2>
