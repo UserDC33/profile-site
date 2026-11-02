@@ -1,0 +1,133 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Personal profile — About me, projects, and contact." />
+  <title>Your Name | Profile</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --fg: #1a1a2e;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --max-w: 720px;
+      --space: 1.5rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --fg: #f1f5f9;
+        --muted: #94a3b8;
+        --accent: #3b82f6;
+        --accent-hover: #60a5fa;
+        --card: #1e293b;
+        --border: #334155;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: calc(var(--space) * 3) var(--space);
+    }
+    header { margin-bottom: calc(var(--space) * 2); text-align: center; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .tagline { color: var(--muted); font-size: 1.125rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: calc(var(--space) * 1.5);
+      margin-bottom: var(--space);
+    }
+    .card h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+    .card h2::before { content: ""; width: 4px; height: 1.25rem; background: var(--accent); border-radius: 2px; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+    .link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 1rem; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--fg); text-decoration: none; font-size: 0.875rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .link:hover { border-color: var(--accent); background: var(--accent); color: white; }
+    .link:hover svg { stroke: white; }
+    .link svg { width: 18px; height: 18px; stroke: currentColor; flex-shrink: 0; }
+    footer { text-align: center; color: var(--muted); font-size: 0.875rem; padding: var(--space); margin-top: auto; }
+    @media (max-width: 480px) {
+      .container { padding: calc(var(--space) * 2) 1rem; }
+      .card { padding: var(--space); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Your Name</h1>
+      <p class="tagline">Student • Developer • Curious Builder</p>
+    </header>
+
+    <section class="card" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>Hi, I'm <strong>Your Name</strong> — a high school student at <strong>SMA Angkasa 1 Jakarta</strong> currently serving in OSIS (Student Council).</p>
+      <p>I enjoy building things for the web, learning new frameworks, and solving problems with code. When I'm not coding, you'll find me reading, gaming, or hanging out with friends.</p>
+      <p>Currently exploring: <strong>Astro</strong>, <strong>TypeScript</strong>, and modern CSS.</p>
+    </section>
+
+    <section class="card" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <p><strong>SMA Angkasa 1 Jakarta</strong> — High School Student (2024–Present)</p>
+      <p>Active in OSIS: organizing events, managing student aspirations, and contributing to school community.</p>
+    </section>
+
+    <section class="card" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul style="display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin-top: 0.5rem;">
+        <li style="background: var(--bg); border: 1px solid var(--border); padding: 0.375rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">HTML / CSS</li>
+        <li style="background: var(--bg); border: 1px solid var(--border); padding: 0.375rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">JavaScript / TypeScript</li>
+        <li style="background: var(--bg); border: 1px solid var(--border); padding: 0.375rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Astro</li>
+        <li style="background: var(--bg); border: 1px solid var(--border); padding: 0.375rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">React (learning)</li>
+        <li style="background: var(--bg); border: 1px solid var(--border); padding: 0.375rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Git / GitHub</li>
+        <li style="background: var(--bg); border: 1px solid var(--border); padding: 0.375rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Tailwind CSS</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <div class="links">
+        <a href="https://github.com/yourusername" class="link" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM7.5 19.5a9 9 0 005.377 1.655c.62.07 1.242-.116 1.564-.611a.75.75 0 111.088 1.076A10.5 10.5 0 017.5 19.5zm10.5-1.5a9 9 0 00-5.377-1.655c-.62-.07-1.242.116-1.565.61a.75.75 0 00-1.087 1.077A10.5 10.5 0 0018 18z" /></svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/yourusername" class="link" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 4.5a1.5 1.5 0 00-3 0V18a1.5 1.5 0 003 0V4.5zM3 18a1.5 1.5 0 013 0v-2.995a4.525 4.525 0 011.556-3.512A9.03 9.03 0 017.5 6.375a5.25 5.25 0 0110.5 0c1.28 0 2.49.346 3.445 1.047a4.524 4.524 0 011.556 3.512V18a1.5 1.5 0 01-3 0V8.721c0-1.154-.567-2.179-1.456-2.752A4.5 4.5 0 0015.75 5a4.5 4.5 0 00-4.5 4.5v9.279z" /></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:you@example.com" class="link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+          Email
+        </a>
+      </div>
+    </section>
+  </div>
+  <footer>
+    Built with Astro · Deployed on GitHub Pages · <a href="https://github.com/yourusername/profile-site" style="color: inherit;" target="_blank" rel="noopener">Source</a>
+  </footer>
+</body>
+</html>
