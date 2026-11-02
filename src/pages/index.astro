@@ -84,11 +84,50 @@
     .gallery img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
     .gallery a { text-decoration: none; color: inherit; }
     footer { text-align: center; color: var(--muted); font-size: 0.875rem; padding: var(--space); margin-top: auto; }
-    @media (max-width: 480px) {
-      .container { padding: calc(var(--space) * 2) 1rem; }
-      .card { padding: var(--space); }
-      .gallery { grid-template-columns: 1fr; }
-    }
+        @media (max-width: 480px) {
+          .container { padding: calc(var(--space) * 2) 1rem; }
+          .card { padding: var(--space); }
+          .gallery { grid-template-columns: 1fr; }
+        }
+
+        /* Minimalist effects */
+        @media (prefers-reduced-motion: no-preference) {
+          .card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+          }
+          .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          header {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+          }
+          header.visible {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
+          }
+          .gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .card, header, .gallery img { transition: none !important; animation: none !important; }
+        }
+        .link:focus-visible, .gallery a:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+        .card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
   </style>
 </head>
 <body>
@@ -162,7 +201,33 @@
     </section>
   </div>
   <footer>
-    Built with Astro · Deployed on GitHub Pages · <a href="https://github.com/yourusername/profile-site" style="color: inherit;" target="_blank" rel="noopener">Source</a>
-  </footer>
-</body>
+      Built with Astro · Deployed on GitHub Pages · <a href="https://github.com/yourusername/profile-site" style="color: inherit;" target="_blank" rel="noopener">Source</a>
+    </footer>
+    <script dangerouslySetInnerHTML={{__html: `
+      (function() {
+        var cards = document.querySelectorAll('.card');
+        var header = document.querySelector('header');
+        function onScroll() {
+          cards.forEach(function(card, i) {
+            var top = card.getBoundingClientRect().top;
+            if (top < window.innerHeight && top > -card.offsetHeight) {
+              requestAnimationFrame(function(){
+                card.classList.add('visible');
+                setTimeout(function(){ card.style.visibility=''; }, 650);
+              });
+            }
+          });
+          if (header) {
+            var hTop = header.getBoundingClientRect().top;
+            if (hTop < window.innerHeight && hTop > -header.offsetHeight) {
+              header.classList.add('visible');
+            }
+          }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+        onScroll();
+      })();
+    `}} />
+  </body>
 </html>
