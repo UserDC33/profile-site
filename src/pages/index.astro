@@ -355,79 +355,184 @@
         </section>
 
             <section class="card" aria-labelledby="hobbies-heading">
-              <h2 id="hobbies-heading">Hobbies</h2>
-              <div class="hobbies-grid" role="list">
-                <article class="hobby-item" role="listitem">
-                  <div class="hobby-icon" aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                  <h2 id="hobbies-heading">Hobbies</h2>
+                  <div class="hobbies-grid" role="list">
+                    <article class="hobby-item" data-hobby="photography" role="listitem">
+                      <div class="hobby-glow" aria-hidden="true"></div>
+                      <div class="hobby-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      </div>
+                      <h3>Photography</h3>
+                      <p>Street, architecture, and daily moments — capturing light and geometry in the everyday.</p>
+                      <div class="hobby-tags">
+                        <span>Street</span><span>Architecture</span><span>Film</span>
+                      </div>
+                    </article>
+                    <article class="hobby-item" data-hobby="coding" role="listitem">
+                      <div class="hobby-glow" aria-hidden="true"></div>
+                      <div class="hobby-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                      </div>
+                      <h3>Coding</h3>
+                      <p>Building web things with Astro, TypeScript, and modern CSS. Always learning, always breaking.</p>
+                      <div class="hobby-tags">
+                        <span>Astro</span><span>TypeScript</span><span>CSS</span>
+                      </div>
+                    </article>
+                    <article class="hobby-item" data-hobby="cycling" role="listitem">
+                      <div class="hobby-glow" aria-hidden="true"></div>
+                      <div class="hobby-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"></circle><circle cx="5.5" cy="17.5" r="3.5"></circle><path d="M12 17.5V14a4.5 4.5 0 0 0-5-4.5 3.5 3.5 0 0 1 7 0 4.5 4.5 0 0 1 5 4.5v3.5"></path></svg>
+                      </div>
+                      <h3>Cycling</h3>
+                      <p>Exploring the city on two wheels — clearing the mind, finding new routes and coffee spots.</p>
+                      <div class="hobby-tags">
+                        <span>Urban</span><span>Distance</span><span>Coffee</span>
+                      </div>
+                    </article>
                   </div>
-                  <h3>Photography</h3>
-                  <p>Street, architecture, and daily moments — capturing light and geometry in the everyday.</p>
-                </article>
-                <article class="hobby-item" role="listitem">
-                  <div class="hobby-icon" aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                  </div>
-                  <h3>Coding</h3>
-                  <p>Building web things with Astro, TypeScript, and modern CSS. Always learning, always breaking.</p>
-                </article>
-                <article class="hobby-item" role="listitem">
-                  <div class="hobby-icon" aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"></circle><circle cx="5.5" cy="17.5" r="3.5"></circle><path d="M12 17.5V14a4.5 4.5 0 0 0-5-4.5 3.5 3.5 0 0 1 7 0 4.5 4.5 0 0 1 5 4.5v3.5"></path></svg>
-                  </div>
-                  <h3>Cycling</h3>
-                  <p>Exploring the city on two wheels — clearing the mind, finding new routes and coffee spots.</p>
-                </article>
-              </div>
-            </section>
+                </section>
 
-            <style>
-              .hobbies-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                gap: 1rem;
-                margin-top: 1rem;
-              }
-              .hobby-item {
-                padding: 1.5rem;
-                background: var(--card);
-                border: 1px solid var(--border);
-                border-radius: 16px;
-                transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-              }
-              .hobby-item:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 12px 32px rgba(0,0,0,0.1);
-                border-color: var(--accent);
-              }
-              .hobby-icon {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 56px;
-                height: 56px;
-                border-radius: 14px;
-                background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
-                color: var(--accent);
-                margin-bottom: 1rem;
-                transition: transform 0.2s, box-shadow 0.2s;
-              }
-              .hobby-item:hover .hobby-icon {
-                transform: scale(1.05);
-                box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
-              }
-              .hobby-item h3 {
-                font-size: 1.1rem;
-                font-weight: 600;
-                color: var(--fg);
-                margin-bottom: 0.5rem;
-              }
-              .hobby-item p {
-                font-size: 0.9rem;
-                color: var(--muted);
-                line-height: 1.6;
-              }
-            </style>
+                <style>
+                  .hobbies-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                    gap: 1.25rem;
+                    margin-top: 1.5rem;
+                  }
+                  .hobby-item {
+                    position: relative;
+                    padding: 1.75rem 1.5rem;
+                    background: var(--card);
+                    border: 1px solid var(--border);
+                    border-radius: 20px;
+                    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s, border-color 0.3s;
+                    overflow: hidden;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    animation: hobby-reveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+                  }
+                  .hobby-item:nth-child(1) { animation-delay: 0.1s; }
+                  .hobby-item:nth-child(2) { animation-delay: 0.2s; }
+                  .hobby-item:nth-child(3) { animation-delay: 0.3s; }
+                  @keyframes hobby-reveal {
+                    to { opacity: 1; transform: translateY(0); }
+                  }
+                  .hobby-glow {
+                    position: absolute;
+                    inset: -50%;
+                    opacity: 0;
+                    transition: opacity 0.4s;
+                    pointer-events: none;
+                    background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), var(--glow-color), transparent 70%);
+                  }
+                  .hobby-item:hover .hobby-glow { opacity: 0.15; }
+                  [data-hobby="photography"] { --glow-color: #f59e0b; }
+                  [data-hobby="coding"] { --glow-color: #3b82f6; }
+                  [data-hobby="cycling"] { --glow-color: #22c55e; }
+                  .hobby-item::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 20px;
+                    padding: 1px;
+                    background: linear-gradient(135deg, transparent, transparent);
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    opacity: 0;
+                    transition: opacity 0.3s, background 0.3s;
+                  }
+                  .hobby-item:hover::before {
+                    opacity: 1;
+                    background: linear-gradient(135deg, var(--glow-color), var(--glow-color-2));
+                  }
+                  [data-hobby="photography"] { --glow-color-2: #f97316; }
+                  [data-hobby="coding"] { --glow-color-2: #8b5cf6; }
+                  [data-hobby="cycling"] { --glow-color-2: #16a34a; }
+                  .hobby-item:hover {
+                    transform: translateY(-6px) rotateX(2deg) rotateY(-2deg);
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+                    border-color: transparent;
+                  }
+                  .hobby-icon {
+                    position: relative;
+                    z-index: 1;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 16px;
+                    background: linear-gradient(135deg, rgba(var(--icon-rgb), 0.12), rgba(var(--icon-rgb-2), 0.12));
+                    color: var(--icon-color);
+                    margin-bottom: 1.25rem;
+                    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s, background 0.3s;
+                  }
+                  [data-hobby="photography"] .hobby-icon { --icon-rgb: 245, 158, 11; --icon-rgb-2: 249, 115, 22; --icon-color: #f59e0b; }
+                  [data-hobby="coding"] .hobby-icon { --icon-rgb: 59, 130, 246; --icon-rgb-2: 139, 92, 246; --icon-color: #3b82f6; }
+                  [data-hobby="cycling"] .hobby-icon { --icon-rgb: 34, 197, 94; --icon-rgb-2: 22, 163, 74; --icon-color: #22c55e; }
+                  .hobby-item:hover .hobby-icon {
+                    transform: scale(1.1) rotate(6deg);
+                    box-shadow: 0 12px 32px rgba(var(--icon-rgb), 0.25);
+                    background: linear-gradient(135deg, rgba(var(--icon-rgb), 0.2), rgba(var(--icon-rgb-2), 0.2));
+                  }
+                  .hobby-item h3 {
+                    position: relative;
+                    z-index: 1;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    color: var(--fg);
+                    margin-bottom: 0.5rem;
+                    transition: color 0.3s;
+                  }
+                  .hobby-item:hover h3 {
+                    background: linear-gradient(135deg, var(--glow-color), var(--glow-color-2));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                  }
+                  .hobby-item p {
+                    position: relative;
+                    z-index: 1;
+                    font-size: 0.9rem;
+                    color: var(--muted);
+                    line-height: 1.7;
+                    margin-bottom: 1rem;
+                  }
+                  .hobby-tags {
+                    position: relative;
+                    z-index: 1;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                  }
+                  .hobby-tags span {
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                    padding: 0.3rem 0.7rem;
+                    border-radius: 999px;
+                    background: rgba(var(--icon-rgb), 0.1);
+                    color: var(--icon-color);
+                    border: 1px solid rgba(var(--icon-rgb), 0.2);
+                    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+                  }
+                  .hobby-tags span:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(var(--icon-rgb), 0.2);
+                    background: rgba(var(--icon-rgb), 0.15);
+                  }
+                  @media (prefers-reduced-motion: reduce) {
+                    .hobby-item { animation: none; opacity: 1; transform: none; }
+                    .hobby-item:hover { transform: translateY(-4px); }
+                    .hobby-icon { transition: none; }
+                    .hobby-item:hover .hobby-icon { transform: scale(1.05); }
+                    .hobby-glow { display: none; }
+                  }
+                </style>
 
                 <section class="card" aria-labelledby="photography-heading">
                   <h2 id="photography-heading">Photography</h2>
@@ -627,30 +732,46 @@
           Built with Astro · Deployed on GitHub Pages · <a href="https://github.com/yourusername/profile-site" style="color: inherit;" target="_blank" rel="noopener">Source</a>
         </footer>
       <script>
-        (function() {
-          var cards = document.querySelectorAll('.card');
-          var header = document.querySelector('header');
-          function onScroll() {
-            cards.forEach(function(card, i) {
-              var top = card.getBoundingClientRect().top;
-              if (top < window.innerHeight && top > -card.offsetHeight) {
-                requestAnimationFrame(function(){
-                  card.classList.add('visible');
-                  setTimeout(function(){ card.style.visibility=''; }, 650);
+              (function() {
+                var cards = document.querySelectorAll('.card');
+                var header = document.querySelector('header');
+                function onScroll() {
+                  cards.forEach(function(card, i) {
+                    var top = card.getBoundingClientRect().top;
+                    if (top < window.innerHeight && top > -card.offsetHeight) {
+                      requestAnimationFrame(function(){
+                        card.classList.add('visible');
+                        setTimeout(function(){ card.style.visibility=''; }, 650);
+                      });
+                    }
+                  });
+                  if (header) {
+                    var hTop = header.getBoundingClientRect().top;
+                    if (hTop < window.innerHeight && hTop > -header.offsetHeight) {
+                      header.classList.add('visible');
+                    }
+                  }
+                }
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', onScroll, { passive: true });
+                onScroll();
+
+                // Hobby cards mouse-tracking glow
+                var hobbyItems = document.querySelectorAll('.hobby-item');
+                hobbyItems.forEach(function(item) {
+                  item.addEventListener('mousemove', function(e) {
+                    var rect = item.getBoundingClientRect();
+                    var x = e.clientX - rect.left;
+                    var y = e.clientY - rect.top;
+                    item.style.setProperty('--mx', x + 'px');
+                    item.style.setProperty('--my', y + 'px');
+                  });
+                  item.addEventListener('mouseleave', function() {
+                    item.style.setProperty('--mx', '50%');
+                    item.style.setProperty('--my', '50%');
+                  });
                 });
-              }
-            });
-            if (header) {
-              var hTop = header.getBoundingClientRect().top;
-              if (hTop < window.innerHeight && hTop > -header.offsetHeight) {
-                header.classList.add('visible');
-              }
-            }
-          }
-          window.addEventListener('scroll', onScroll, { passive: true });
-          window.addEventListener('resize', onScroll, { passive: true });
-          onScroll();
-        })();
-      </script>
+              })();
+            </script>
     </body>
 </html>
