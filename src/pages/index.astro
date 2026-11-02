@@ -159,29 +159,80 @@
 
     <section class="card" aria-labelledby="skills-heading">
           <h2 id="skills-heading">Skills</h2>
+          <style>
+            .skill-card {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 0.5rem;
+              padding: 1.25rem 1rem;
+              background: var(--card);
+              border: 1px solid white;
+              border-radius: 16px;
+              cursor: default;
+              transition: transform 0.2s, box-shadow 0.2s;
+              color: white;
+            }
+            .skill-card::before {
+              content: '';
+              position: absolute;
+              inset: -2px;
+              border-radius: 18px;
+              background: conic-gradient(from 0deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0080ff, #ff00ff, #ff0000);
+              opacity: 0;
+              transition: opacity 0.3s;
+              z-index: -1;
+              animation: rainbow-spin 3s linear infinite;
+            }
+            .skill-card:hover::before {
+              opacity: 1;
+            }
+            .skill-card:hover {
+              transform: translateY(-4px);
+              box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+            }
+            .skill-card span { color: inherit; }
+            .skill-card .learning-badge {
+              font-size: 0.625rem;
+              color: rgba(255,255,255,0.7);
+              background: rgba(255,255,255,0.1);
+              padding: 0.125rem 0.5rem;
+              border-radius: 999px;
+              border: 1px solid rgba(255,255,255,0.2);
+            }
+            @keyframes rainbow-spin {
+              to { transform: rotate(360deg); }
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .skill-card::before { animation: none; opacity: 0; }
+              .skill-card:hover::before { opacity: 0; }
+              .skill-card:hover { border-color: var(--accent); }
+            }
+          </style>
           <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-top: 1rem;">
-            <button class="skill" data-tooltip="HTML5 & CSS3" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.25rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; cursor: default; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.1)'; this.style.borderColor='var(--accent)'" onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor=''">
+            <button class="skill-card" data-tooltip="HTML5 & CSS3">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 28L16 4L28 28H20V16H12V28H4Z" stroke="#E34F26" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20H24" stroke="#E34F26" stroke-width="2.5" stroke-linecap="round"/></svg>
               <span style="font-size: 0.875rem; font-weight: 500;">HTML / CSS</span>
             </button>
-            <button class="skill" data-tooltip="JavaScript & TypeScript" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.25rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; cursor: default; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.1)'; this.style.borderColor='var(--accent)'" onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor=''">
+            <button class="skill-card" data-tooltip="JavaScript & TypeScript">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12C4 8.686 6.686 6 10 6H22C25.314 6 28 8.686 28 12V20C28 23.314 25.314 26 22 26H10C6.686 26 4 23.314 4 20V12Z" stroke="#F7DF1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="16" y="21" text-anchor="middle" font-size="12" font-weight="bold" fill="#F7DF1E">JS</text></svg>
               <span style="font-size: 0.875rem; font-weight: 500;">JavaScript / TS</span>
             </button>
-            <button class="skill" data-tooltip="Astro Framework" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.25rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; cursor: default; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.1)'; this.style.borderColor='var(--accent)'" onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor=''">
+            <button class="skill-card" data-tooltip="Astro Framework">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2L2 10V22L16 30L30 22V10L16 2Z" stroke="#BC52EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 2L16 16" stroke="#BC52EE" stroke-width="2.5" stroke-linecap="round"/><path d="M16 16L4 22" stroke="#BC52EE" stroke-width="2.5" stroke-linecap="round"/><path d="M16 16L28 22" stroke="#BC52EE" stroke-width="2.5" stroke-linecap="round"/></svg>
               <span style="font-size: 0.875rem; font-weight: 500;">Astro</span>
             </button>
-            <button class="skill" data-tooltip="React (learning)" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.25rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; cursor: default; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.1)'; this.style.borderColor='var(--accent)'" onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor=''">
+            <button class="skill-card" data-tooltip="React (learning)">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="14" stroke="#61DAFB" stroke-width="2.5"/><path d="M16 2V16C16 16 2 30 16 30C16 30 30 16 30 2C30 16 16 30 16 30" stroke="#61DAFB" stroke-width="2.5" stroke-linecap="round"/></svg>
               <span style="font-size: 0.875rem; font-weight: 500;">React</span>
-              <span style="font-size: 0.625rem; color: var(--muted); background: var(--bg); padding: 0.125rem 0.5rem; border-radius: 999px;">learning</span>
+              <span class="learning-badge">learning</span>
             </button>
-            <button class="skill" data-tooltip="Git & GitHub" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.25rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; cursor: default; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.1)'; this.style.borderColor='var(--accent)'" onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor=''">
+            <button class="skill-card" data-tooltip="Git & GitHub">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4C9.373 4 4 9.373 4 16C4 20.64 6.21 24.72 10.17 25.83V19.8H7V16H10.17V12.83C10.17 10.7 11.66 9.21 13.5 9.21C14.49 9.21 15.66 9.4 16 9.58V6.5H13.5C12.12 6.5 11 5.7 11 4.5V4.5C11 3.12 12.12 2.32 13.5 2.32H16V1.5C16 0.67 16.67 0 17.5 0H17.5C18.33 0 19 0.67 19 1.5V4.5C19 5.7 17.88 6.5 16.5 6.5H14V9.58C14.34 9.4 15.51 9.21 16.5 9.21C18.34 9.21 19.83 10.7 19.83 12.83V16H23V19.8H19.83V25.83C23.79 24.72 26 20.64 26 16C26 9.373 20.627 4 16 4Z" stroke="#F05032" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span style="font-size: 0.875rem; font-weight: 500;">Git / GitHub</span>
             </button>
-            <button class="skill" data-tooltip="Tailwind CSS" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.25rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 16px; cursor: default; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.1)'; this.style.borderColor='var(--accent)'" onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor=''">
+            <button class="skill-card" data-tooltip="Tailwind CSS">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2L2 10V22L16 30L30 22V10L16 2Z" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 2L16 16" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round"/><path d="M16 16L4 22" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round"/><path d="M16 16L28 22" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round"/></svg>
               <span style="font-size: 0.875rem; font-weight: 500;">Tailwind CSS</span>
             </button>
